@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">iTunesSearcher</string>
+    <string name="retry">Retry</string>
+    <string name="unknown_error">Unknown Error</string>
+    <string name="search_hint">Search in iTunes</string>
+    <string name="empty_search_result">No results for <b>%s</b></string>
+    <string name="format_duration">%d: %d</string>
+</resources>
