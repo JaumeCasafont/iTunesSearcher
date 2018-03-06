@@ -16,9 +16,12 @@
 
 package com.jcr.itunessearcher.ui;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 
 import com.jcr.itunessearcher.R;
+import com.jcr.itunessearcher.ui.mediaplayer.MediaPlayerFragment;
 import com.jcr.itunessearcher.ui.searchresults.SearchResultsFragment;
 
 import javax.inject.Inject;
@@ -39,6 +42,14 @@ public class NavigationController {
         SearchResultsFragment searchFragment = new SearchResultsFragment();
         fragmentManager.beginTransaction()
                 .replace(containerId, searchFragment)
+                .commitAllowingStateLoss();
+    }
+
+    public void navigateToMediaPlayer(Integer trackId) {
+        MediaPlayerFragment mediaPlayerFragment = MediaPlayerFragment.create(trackId);
+        fragmentManager.beginTransaction()
+                .replace(containerId, mediaPlayerFragment)
+                .addToBackStack(null)
                 .commitAllowingStateLoss();
     }
 }

@@ -31,6 +31,7 @@ import com.jcr.itunessearcher.data.network.ApiResponse;
 import com.jcr.itunessearcher.data.network.ResponseiTunesSearch;
 import com.jcr.itunessearcher.data.network.ServiceiTunes;
 import com.jcr.itunessearcher.util.AbsentLiveData;
+import com.jcr.itunessearcher.util.AutoClearedValue;
 
 import java.util.List;
 
@@ -107,5 +108,9 @@ public class RepositoryiTunes {
                 return body;
             }
         }.asLiveData();
+    }
+
+    public LiveData<ResultiTune> getiTuneById(Integer id) {
+        return iTunesDao.loadById(id);
     }
 }

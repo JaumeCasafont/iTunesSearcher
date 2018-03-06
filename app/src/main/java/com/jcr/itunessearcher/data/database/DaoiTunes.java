@@ -18,7 +18,7 @@ import java.util.List;
 public abstract class DaoiTunes {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public abstract void bulkInsert(ResultiTune... iTune);
+    public abstract void insert(ResultiTune... iTune);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     public abstract void insertRepos(List<ResultiTune> iTunes);
@@ -47,5 +47,8 @@ public abstract class DaoiTunes {
 
     @Query("SELECT * FROM iTunes WHERE trackId in (:trackIds)")
     protected abstract LiveData<List<ResultiTune>> loadById(List<Integer> trackIds);
+
+    @Query("SELECT * FROM iTunes WHERE trackId in (:trackId)")
+    public abstract LiveData<ResultiTune> loadById(Integer trackId);
 
 }

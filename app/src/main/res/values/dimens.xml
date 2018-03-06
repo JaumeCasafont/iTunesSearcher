@@ -2,5 +2,6 @@
 <resources>
     <dimen name="default_margin">16dp</dimen>
     <dimen name="artwork_size">64dp</dimen>
+    <dimen name="artwork_size_big">256dp</dimen>
     <dimen name="card_spacing">64dp</dimen>
 </resources>

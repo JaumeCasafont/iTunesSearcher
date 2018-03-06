@@ -70,7 +70,7 @@ public class SearchResultsFragment extends Fragment implements Injectable, Searc
         super.onActivityCreated(savedInstanceState);
         searchViewModel = ViewModelProviders.of(this, viewModelFactory).get(SearchResultsViewModel.class);
         SearchResultsListAdapter rvAdapter = new SearchResultsListAdapter(dataBindingComponent,
-                iTune -> navigationController.navigateToSearch());
+                iTune -> navigationController.navigateToMediaPlayer(iTune.trackId));
         binding.get().repoList.setAdapter(rvAdapter);
         adapter = new AutoClearedValue<>(this, rvAdapter);
 

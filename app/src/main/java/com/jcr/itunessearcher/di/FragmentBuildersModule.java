@@ -16,6 +16,7 @@
 
 package com.jcr.itunessearcher.di;
 
+import com.jcr.itunessearcher.ui.mediaplayer.MediaPlayerFragment;
 import com.jcr.itunessearcher.ui.searchresults.SearchResultsFragment;
 
 import dagger.Module;
@@ -24,5 +25,8 @@ import dagger.android.ContributesAndroidInjector;
 @Module
 public abstract class FragmentBuildersModule {
     @ContributesAndroidInjector
-    abstract SearchResultsFragment contributeRepoFragment();
+    abstract SearchResultsFragment contributeResultFragment();
+
+    @ContributesAndroidInjector
+    abstract MediaPlayerFragment contributeMediaPlayerFragment();
 }
